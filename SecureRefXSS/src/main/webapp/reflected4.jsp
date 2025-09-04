@@ -16,9 +16,10 @@
     	//java 코드
 		String keyword;
     	request.setCharacterEncoding("UTF-8");
-    	keyword = request.getParameter("keyword"); //main.jsp의 form태그 내 input 태그의 name속성 값 - keyword
-	
-		response.sendRedirect("main.jsp?keyword="+keyword);
+    	keyword = request.getParameter("keyword");
+	%>
+	<%
+		response.sendRedirect("main4.jsp?keyword="+keyword); //브라우저에게 main.jsp 요청하도록 진행
 	%>
     </body>
 

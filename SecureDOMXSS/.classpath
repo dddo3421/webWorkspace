@@ -13,7 +13,13 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/webWorkspace/SecureRefXSS/src/main/webapp/WEB-INF/lib/jstl-1.2.jar">
+	<classpathentry kind="lib" path="C:/Program Files/Java/jdk-21/lib/ojdbc17.jar">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Jh/Desktop/현대이지웰6회차_자료공유/시큐어 코딩/배부자료/jstl-1.2.jar">
 		<attributes>
 			<attribute name="module" value="true"/>
 		</attributes>

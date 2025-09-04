@@ -90,7 +90,7 @@
             	
             %>
 
-                <div class="container__header"> 검색어 <%=keyword  %><!-- keyword 변수에 저장되어 값이 출력 -->
+                <div class="container__header"> 검색어 <%=keyword  %><!-- keyword 변수에 저장된 값이 출력 -->
                 </div>
         </div>
 

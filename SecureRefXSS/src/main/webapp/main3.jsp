@@ -47,22 +47,29 @@
         </style>
         <script>
         	function submitHandler(){ //서버측에 값을 전송하기 전에 xss에 취약한 특수 문자들에 대해서 치환하는 기능의 함수 
-        		const keyword = document.querySelector("input[name='keyword']");
-        		keyword.value = keyword.value.replaceAll(
-        			    /[&<>()"'$/]/g,          
-        			    char => ({                // 화살표 함수, 치환할 문자 패턴 : 패턴의 대체값 
-        			        '&':'&amp;',
-        			        '<':'&lt;',
-        			        '>':'&gt;',
-        			        '"':'&quot;',
-        			        "'":'&#39;',
-        			        '$':'&#36;',
-        			        '(':'&#40;',
-        			        ')':'&#41;',
-        			        '/':'&#47;'
-        			    }[char])                // char 객체 사용, 매칭되면 치환함 
-        			);
-        		return true;
+
+
+//	        		const keyword = document.querySelector("input[name='keyword']");
+//	        		keyword.value = keyword.value.replaceAll(
+//	        			    /[&<>()"'$/]/g,          
+//	        			    char => ({                // 화살표 함수, 치환할 문자 패턴 : 패턴의 대체값 
+//	        			        '&':'&amp;',
+//	        			        '<':'&lt;',
+//	        			        '>':'&gt;',
+//	        			        '"':'&quot;',
+//	        			        "'":'&#39;',
+//	        			        '$':'&#36;',
+//	        			        '(':'&#40;',
+//	        			        ')':'&#41;',
+//	        			        '/':'&#47;'
+//	        			    }[char])                // char 객체 사용, 매칭되면 치환함 
+//	        			);
+//	        		return true;
+				
+	        		
+        		
+        		
+        		
         	}
         	
         </script>
@@ -95,7 +102,7 @@
             	
             %>
 
-                <div class="container__header"> 검색어 <%=keyword  %><!-- keyword 변수에 저장되어 값이 출력 -->
+                <div class="container__header"> 검색어 <%=keyword  %><!-- keyword 변수에 저장된 값이 출력 -->
                 </div>
         </div>
 
