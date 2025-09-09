@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Servlet01</display-name>
+  <welcome-file-list> <!-- 별다른 uri 없이 요청이 들어오면 http://서버주소:포트번호/context => 응답할 페이지 설정해놓은 태그 -->
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>main.htm</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+  	<servlet-name>myFirst</servlet-name>
+  	<servlet-class>sec01.FirstServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>myFirst</servlet-name>
+  	<url-pattern>/first</url-pattern> <!-- /Servlet01/first , web.xml이 변경되면 서버 재시작해야 함 -->
+  </servlet-mapping>
+
+	<servlet>
+		<servlet-name>mySecond</servlet-name>
+		<servlet-class>sec01.SecondServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>mySecond</servlet-name>
+		<url-pattern>/second</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>myJoin</servlet-name>
+		<servlet-class>sec02.JoinServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>myJoin</servlet-name>
+		<url-pattern>/join</url-pattern>
+	</servlet-mapping>
+  
+</web-app>

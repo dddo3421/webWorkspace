@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="icon" type="image/png" href="#" />
+
+	</head>
+	<body>	
+		<form name="frmLogin" method="post" action="login">
+			아이디 : <input type="text" id="user_id" name="user_id"><br>
+			비밀번호 : <input type="password" name="user_pw"><br>
+			<input type="submit" value="로그인"> <input type="reset" value="취소">
+		</form> <br><br>
+		<a href="/Servlet01/login">링크(기본_URL : get 방식으로 요청)</a><br>
+		<a href="/Servlet01/login?user_id=abcd&user_pw=1234">링크(Get방식 파라미터 전달)</a>
+	</body>
+</html>
