@@ -17,7 +17,7 @@ public class SecondServlet5 extends HttpServlet {
 	
 
 	/**
-	 * FirstSevlet05에서 dispatch 방식으로 포워딩 요청된 서블릿 - 최종 응답 진행
+	 * FirstSevlet05에서 dispatch 방식으로 포워딩 요청된 서블릿 - 최종 응답 진행(클라이언트 브라우저의 url은 최초 요청된 first05에서 변경되지 않음)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String name = request.getParameter("name");

@@ -17,7 +17,7 @@ public class FirstServlet04 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * redirect 방식으로 다른 서블릿에 데이터 전달ㅍ
+	 * redirect 방식으로 다른 서블릿에 데이터 전달
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=utf-8");
