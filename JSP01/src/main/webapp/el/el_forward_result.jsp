@@ -5,6 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	var name = "${name}";//표현 언어를 script 태그내에 사용 "홍길동"
+	alert(name);
+</script>
 </head>
 <body>
 request 객체에 attribute로 바인딩 된 data el로 출력<br>
