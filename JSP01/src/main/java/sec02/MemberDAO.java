@@ -8,7 +8,23 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.sql.DataSource;
+
 public class MemberDAO {
+	//ConnectionPool 사용 메소드 - DAO의 생성자 메소드 활용
+	private DataSource dataFactory;
+	public MemberDAO() {
+		try {
+			Context ctx = new InitialContext();
+			Context envContext = (Context) ctx.lookup("java:/comp/env");//jndi에 접근하기 위한 기본경로 설정
+			this.dataFactory = (DataSource) envContext.lookup("jdbc/oracle");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	// DB 연결 담당 메소드 : DB 연결하고 Connection 객체 반환
 	private Connection getConnection() {
 		Connection con = null;
@@ -53,8 +69,8 @@ public class MemberDAO {
 		
 		
 		try {
-			con = getConnection();
-			
+//			con = getConnection(); //사용자 정의 메소드
+			con=dataFactory.getConnection();
 			String sql = "select * from member2";
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
