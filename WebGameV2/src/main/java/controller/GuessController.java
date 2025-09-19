@@ -20,6 +20,7 @@ public class GuessController extends HttpServlet {
 
     private void doHandle(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
 
         // 세션 로그인 체크
         HttpSession session = request.getSession(false);
@@ -28,18 +29,29 @@ public class GuessController extends HttpServlet {
             return;
         }
 
+        // 세션에서 게임 객체 가져오기
+        Guess game = (Guess) session.getAttribute("guessGame");
+        if (game == null) {
+            game = new Guess(); // 새 게임 시작
+            session.setAttribute("guessGame", game);
+        }
+
         if ("POST".equalsIgnoreCase(request.getMethod())) {
             String input = request.getParameter("guess");
             try {
                 int userInput = Integer.parseInt(input);
-                Guess game = new Guess();
                 String result = game.check(userInput);
                 request.setAttribute("result", result);
+
+                if ("정답!".equals(result)) {
+                    session.removeAttribute("guessGame"); // 정답 맞히면 게임 종료
+                }
+
             } catch (NumberFormatException e) {
                 request.setAttribute("result", "1~10 사이의 숫자를 입력하세요.");
             }
         }
 
-        request.getRequestDispatcher("/view/guess.jsp").forward(request, response);
+        request.getRequestDispatcher("/gameview/guess.jsp").forward(request, response);
     }
 }

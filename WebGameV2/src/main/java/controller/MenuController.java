@@ -5,7 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
-@WebServlet("/menu")
+@WebServlet("/menu") //메뉴 진입시 로그인체크와 메뉴 포워딩 담당
 public class MenuController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -20,16 +20,14 @@ public class MenuController extends HttpServlet {
     private void doHandle(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession(false);
+
+        // 로그인 체크
         if (session == null || session.getAttribute("loginMember") == null) {
-            response.sendRedirect("user?action=loginForm"); // 로그인 필요
+            response.sendRedirect(request.getContextPath() + "/user?action=loginForm"); 
             return;
         }
 
-        String action = request.getParameter("action");
-        if ("appinfo".equals(action)) {
-            request.getRequestDispatcher("/appinfo.jsp").forward(request, response);
-        } else { // 메뉴 페이지
-            request.getRequestDispatcher("/menu.jsp").forward(request, response);
-        }
+        // 메뉴 페이지로 포워딩
+        request.getRequestDispatcher("/menu.jsp").forward(request, response);
     }
 }

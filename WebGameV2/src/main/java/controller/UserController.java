@@ -108,7 +108,7 @@ public class UserController extends HttpServlet {
                     dao.delMember(member.getId());
                     session.invalidate(); // 세션 제거
                 }
-                response.sendRedirect(request.getContextPath() + "/user?action=loginForm");
+                response.sendRedirect(request.getContextPath() + "/main/main.jsp");
                 break;
 
             case "logout": // 로그아웃

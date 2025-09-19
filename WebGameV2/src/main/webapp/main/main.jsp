@@ -14,7 +14,7 @@
 	<br>
 	<br>
 	<!-- 메뉴로 이동(로그인 필요) -->
-	<a href="<%=request.getContextPath()%>/menu.jsp">게임 메뉴로 이동</a>
+	<a href="<%=request.getContextPath()%>/menu">게임 메뉴로 이동</a>
 	<br>
 	<br>
 

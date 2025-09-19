@@ -16,7 +16,7 @@
 </c:if>
 
 <form method="post" action="<%=request.getContextPath()%>/user?action=login">
-    <table border="1" cellpadding="5" cellspacing="0">
+    <table cellpadding="5" cellspacing="0">
         <tr>
             <td>아이디</td>
             <td><input type="text" name="id" required></td>

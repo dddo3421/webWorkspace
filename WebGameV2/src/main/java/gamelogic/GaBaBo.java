@@ -30,6 +30,6 @@ public class GaBaBo {
         else if (result == -1 || result == 2) outcome = "컴퓨터 승!";
         else outcome = "사용자 승!";
 
-        return "사용자: " + userChoice + ", 컴퓨터: " + comChoice + " → " + outcome;
+        return "사용자: " + userChoice + ", 컴퓨터: " + comChoice + " - " + outcome;
     }
 }
